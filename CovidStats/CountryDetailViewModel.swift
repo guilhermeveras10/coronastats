@@ -10,7 +10,9 @@ import Foundation
 // Uma classe final em Swift evita que a classe seja herdada.
 final class CountryDetailViewModel: ObservableObject {
     
+    // Esse wrapper adiciona a propriedade de recarregar as views que usam a variável marcada como @Published. É como se ela gritasse para todas as views que usam essa variável: "Eu fui mudada!".
     @Published var reports: [RegionReport] = []
+    //Esse wrapper adiciona a propriedade de recarregar as views que usam a variável marcada como @Published. É como se ela gritasse para todas as views que usam essa variável: "Eu fui mudada!".
     @Published var alertItem: AlertItem?
     
     private var iso: String

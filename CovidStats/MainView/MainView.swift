@@ -9,6 +9,21 @@ import SwiftUI
 
 struct MainView: View {
     
+    // @StateObject deve ser utilizado quando queremos guardar e manipular informações de estado e não queremos que os valores dessa estrutura sejam perdidos quando trocamos de view.
+    
+    /// class DataModel: ObservableObject {
+    ///     var name = "Some Name"
+    ///     var isEnabled = false
+    /// }
+
+    /// struct MyView: View {
+    ///     @StateObject private var model = DataModel()
+
+    ///     var body: some View {
+    ///         Text(model.name)
+    ///     }
+    /// }
+    
     @StateObject private var viewModel = MainViewModel()
     
     var body: some View {
@@ -33,6 +48,7 @@ struct MainView: View {
                     TotalDataView(totalData: viewModel.totalData)
                     
                     if viewModel.isSearchVisible {
+                        // Testando esse código, você pode checar o console quando estiver clicando no toggle e verá que a mudança na propridade isEnabled está sendo alterada e comunicada pra todas as views.
                         SearchBarView(searchText: $viewModel.searchText)
                     }
                     
@@ -57,6 +73,7 @@ struct MainView: View {
                 }
             }
             .navigationTitle("Statistics")
+            // Testando esse código, você pode checar o console quando estiver clicando no toggle e verá que a mudança na propridade isEnabled está sendo alterada e comunicada pra todas as views.
             .alert(item: $viewModel.alertItem, content: { alertItem in
                 Alert(title: alertItem.title, message: alertItem.message, dismissButton: alertItem.dismissButton)
             })

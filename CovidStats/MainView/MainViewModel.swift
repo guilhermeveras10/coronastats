@@ -10,10 +10,15 @@ import Foundation
 // Uma classe final em Swift evita que a classe seja herdada.
 final class MainViewModel: ObservableObject {
     
+    // Esse wrapper adiciona a propriedade de recarregar as views que usam a variável marcada como @Published. É como se ela gritasse para todas as views que usam essa variável: "Eu fui mudada!".
     @Published var totalData = TotalData.dummyData
+    // Esse wrapper adiciona a propriedade de recarregar as views que usam a variável marcada como @Published. É como se ela gritasse para todas as views que usam essa variável: "Eu fui mudada!".
     @Published var allCountries: [Country] = []
+    // Esse wrapper adiciona a propriedade de recarregar as views que usam a variável marcada como @Published. É como se ela gritasse para todas as views que usam essa variável: "Eu fui mudada!".
     @Published var searchText = ""
+    // Esse wrapper adiciona a propriedade de recarregar as views que usam a variável marcada como @Published. É como se ela gritasse para todas as views que usam essa variável: "Eu fui mudada!".
     @Published var isSearchVisible = false
+    // Esse wrapper adiciona a propriedade de recarregar as views que usam a variável marcada como @Published. É como se ela gritasse para todas as views que usam essa variável: "Eu fui mudada!".
     @Published var alertItem: AlertItem?
     
     init() {
